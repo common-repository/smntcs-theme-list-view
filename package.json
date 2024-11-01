@@ -1,0 +1,38 @@
+{
+	"name": "smntcs-theme-list-view",
+	"description": "A list view for the smntcs theme",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"Plugin",
+		"SMNTCS Theme List View"
+	],
+	"homepage": "https://github.com/nielslange/smntcs-theme-list-view#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nielslange/smntcs-theme-list-view.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nielslange/smntcs-theme-list-view/issues"
+	},
+	"devDependencies": {
+		"@wordpress/env": "5.15.0",
+		"@wordpress/prettier-config": "2.13.0",
+		"@wordpress/stylelint-config": "21.14.0",
+		"eslint": "^8.37.0",
+		"node-sass": "8.0.0",
+		"prettier": "npm:wp-prettier@^2.8.5",
+		"rtlcss": "4.0.0",
+		"stylelint": "14.16.1"
+	},
+	"scripts": {
+		"build": "node-sass --output-style compressed -o assets/css assets/scss && npm run build-rtl",
+		"build-rtl": "rtlcss assets/css/style.css assets/css/style-rtl.css",
+		"phpcbf": "composer run phpcbf",
+		"phpcs": "composer run phpcs",
+		"phplint": "composer run phplint",
+		"stylelint": "stylelint 'assets/css/**/*.css'",
+		"watch": "node-sass --output-style compressed -o assets/css assets/scss --watch",
+		"wp-env": "wp-env"
+	}
+}
